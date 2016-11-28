@@ -8,7 +8,7 @@
 	// USER EDITABLE LINES - Change these to match your location and preferences!
 
 	// Your Yahoo WOEID code
-	// Find your WOEID code at http://zourbuth.com/tools/woeid/
+	// Find your WOEID code at http://woeid.rosselliot.co.nz/
 	var woeid = 23416998;
 	
 	// Your temperature unit measurement
