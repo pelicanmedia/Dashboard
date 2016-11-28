@@ -12,8 +12,7 @@ This project turns your Raspberry Pi into a simple, skinnable time and weather d
     - [Configuring your Pi](#configuringYourPi)
         * [Disallowing screen sleep](#disallowingScreenSleep)
         * [Installing Unclutter](#hidingCursor)
-        * [Installing Midori](#installingMidori)
-        * [Auto-starting Unclutter and Midori](#autoStartingMidori)
+        * [Auto-starting Unclutter and Chromium](#autoStartingChrome)
     - [Scheduling screen sleep](#scheduling)
 + [Changing the skin](#changingTheSkin)
 + [Creating skins](#creatingSkins)
@@ -118,14 +117,7 @@ Unclutter causes the mouse cursor to disappear when the mouse isn't being moved.
   sudo apt-get install unclutter
   ```
   
-#### <a name="installingMidori"></a>Installing Midori
-
-Midori is used for its compatibility with multiple RPi generations and reasonably solid rendering. Other browsers may be used if preferred using much the same strategy.
-  ```
-  sudo apt-get install midori
-  ```
-  
-#### <a name="autoStartingMidori"></a>Auto-starting Unclutter and Midori
+#### <a name="autoStartingMidori"></a>Auto-starting Unclutter and Chromium
 
 1. Create a new directory at `~/.config/autostart` if it does not exist
 2. cd into this directory - `cd ~/.config/autostart`
@@ -138,13 +130,13 @@ Midori is used for its compatibility with multiple RPi generations and reasonabl
   Exec=unclutter -idle 0.1
   ```
   
-5. Create a new .desktop file - `nano midoriAuto.desktop`
+5. Create a new .desktop file - `nano chromeAuto.desktop`
 6. Add the following lines, edit the file path to where this project's index.html lives on your Pi and save.
   
   ```
   [Desktop Entry]
   Type=Application
-  Exec=midori -e Fullscreen -a file:///home/pi/Dashboard/index.html
+  Exec=chromium-browser --kiosk -a file:///home/pi/Dashboard/index.html
   ```
   
 Your Pi should now atomatically start kiosk mode and show the dashboard, full screen, once your desktop loads.
