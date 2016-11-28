@@ -131,27 +131,23 @@ Midori is used for its compatibility with multiple RPi generations and reasonabl
 #### <a name="autoStartingMidori"></a>Auto-starting Unclutter and Midori
 
 1. Create a new directory at `~/.config/autostart` if it does not exist
-2. `cd ~/.config/autostart` - cd into this directory
-3. `nano unclutterAuto.desktop` - Create a new .desktop file
+2. cd into this directory - `cd ~/.config/autostart`
+3. Create a new .desktop file - `nano unclutterAuto.desktop`
 4. Add the following lines and save.
+  
   ```
   [Desktop Entry]
   Type=Application
   Exec=unclutter -idle 0.1
   ```
   
-5. `nano midoriAuto.desktop` - Create a new .desktop file
+5. Create a new .desktop file - `nano midoriAuto.desktop`
 6. Add the following lines, edit the file path to where this project's index.html lives on your Pi and save.
+  
   ```
   [Desktop Entry]
   Type=Application
   Exec=midori -e Fullscreen -a file:///home/pi/Dashboard/index.html
-  ```
-4. Add the following lines and save.
-  ```
-  [Desktop Entry]
-  Type=Application
-  Exec=unclutter -idle 0.1
   ```
   
 Your Pi should now atomatically start kiosk mode and show the dashboard, full screen, once your desktop loads.
