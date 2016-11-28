@@ -147,6 +147,12 @@ Midori is used for its compatibility with multiple RPi generations and reasonabl
   Type=Application
   Exec=midori -e Fullscreen -a file:///home/pi/Dashboard/index.html
   ```
+4. Add the following lines and save.
+  ```
+  [Desktop Entry]
+  Type=Application
+  Exec=unclutter -idle 0.1
+  ```
   
 Your Pi should now atomatically start kiosk mode and show the dashboard, full screen, once your desktop loads.
 
