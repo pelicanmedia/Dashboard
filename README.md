@@ -46,25 +46,11 @@ This project is not distributed with its dependencies; however, [Bower](http://b
 1. `sudo apt-get update && sudo apt-get upgrade` - Update your system
 2. Install Node Package Manager (required for Bower) 
 
-  ##### Raspberry Pi A/B/B+
-
   ```
-  wget https://nodejs.org/dist/v4.0.0/node-v4.0.0-linux-armv6l.tar.gz 
-  tar -xvf node-v4.0.0-linux-armv6l.tar.gz 
-  cd node-v4.0.0-linux-armv6l
-  sudo cp -R * /usr/local/
+  curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+  sudo apt-get install -y nodejs build-essential
   ```
-
-  ##### Raspberry Pi 2 Model B
-
-  ```
-  wget https://nodejs.org/dist/v4.0.0/node-v4.0.0-linux-armv7l.tar.gz 
-  tar -xvf node-v4.0.0-linux-armv7l.tar.gz 
-  cd node-v4.0.0-linux-armv7l
-  sudo cp -R * /usr/local/
-  ```
-  <a href="http://blog.wia.io/installing-node-js-v4-0-0-on-a-raspberry-pi/">Node install instructions</a> by <a href="http://blog.wia.io/author/conall/">Conall Laverty</a>
-    
+  Taken from <a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Installing Node.js via package manager</a>
 
 3. `sudo npm install -g bower` - Install Bower
 4. `cd ~/Pi-Kitchen-Dashboard` - cd into the directory of the cloned project
