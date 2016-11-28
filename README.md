@@ -1,7 +1,7 @@
-#Pi Kitchen Dashboard
+#Dashboard
 #####Because thrift store monitors still need things to do.
 
-This project turns your monitor and Raspberry Pi into a simple, skinnable time and weather dashboard for your kitchen. Want it in your living room? **Too bad.**
+This project turns your monitor and Raspberry Pi into a simple, skinnable time and weather dashboard.
 
 ![alt text](https://lh5.googleusercontent.com/OvyLwyLtXF69AJ-8U68OPnLXhZNwOPG7JYv5i-fa_44=w1167-h875-no "Pi Kitchen Dashboard")
 
@@ -35,16 +35,27 @@ This project turns your monitor and Raspberry Pi into a simple, skinnable time a
 
 ### <a name="cloning"></a>Cloning
 
-Clone this repository with `git clone https://github.com/userexec/Pi-Kitchen-Dashboard.git`.
+Clone this repository with: 
 
-If your Pi does not currently have git, you will need to install it first with `sudo apt-get install git`.
+  ```
+  git clone https://github.com/pelicanmedia/Dashboard.git`.
+  ```
+
+If your Pi does not currently have git, you will need to install it first with: 
+  
+  ```
+  sudo apt-get install git`.
+  ```  
 
 ### <a name="fulfillingRequirements"></a>Fulfilling requirements
 
 This project is not distributed with its dependencies; however, [Bower](http://bower.io/) will automatically pull them in.
 
-1. `sudo apt-get update && sudo apt-get upgrade` - Update your system
-2. Install Node Package Manager (required for Bower) 
+1. Update your system:
+  ```
+  sudo apt-get update && sudo apt-get upgrade -y
+  ```
+2. Install Node Package Manager (required for Bower):
 
   ```
   curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
@@ -52,27 +63,38 @@ This project is not distributed with its dependencies; however, [Bower](http://b
   ```
   Taken from <a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Installing Node.js via package manager</a>
 
-3. `sudo npm install -g bower` - Install Bower
-4. `cd ~/Pi-Kitchen-Dashboard` - cd into the directory of the cloned project
-5. `bower install` - Install the project's dependencies
+3. Install Bower:
+  ```
+  sudo npm install -g bower
+  ```
+  
+4. cd into the directory of the cloned project:
+  ```
+  cd ~/Dashboard
+  ```
+  
+5. Install the project's dependencies:
+  ```
+  bower install
+  ```
 
 ### <a name="settingYourLocation"></a>Setting your location
 
 Open `js/weather.js` and find the following section at the top:
 
-```javascript
-// Your Yahoo WOEID code
-// Find your WOEID code at http://zourbuth.com/tools/woeid/
-var woeid = 23416998;
+  ```javascript
+  // Your Yahoo WOEID code
+  // Find your WOEID code at http://zourbuth.com/tools/woeid/
+  var woeid = 23416998;
 
-// Your temperature unit measurement
-// This bit is simple, 'c' for Celcius, and 'f' for Fahrenheit
-var unit = 'c';
+  // Your temperature unit measurement
+  // This bit is simple, 'c' for Celcius, and 'f' for Fahrenheit
+  var unit = 'c';
 
-// Yahoo! query interval (milliseconds)
-// Default is every 15 minutes. Be reasonable. Don't query Yahoo every 500ms.
-var waitBetweenWeatherQueriesMS = 900000;
-```
+  // Yahoo! query interval (milliseconds)
+  // Default is every 15 minutes. Be reasonable. Don't query Yahoo every 500ms.
+  var waitBetweenWeatherQueriesMS = 900000;
+  ```
 
 Change these variables to match your location, unit measurement, and desired update interval, and your part of the coding is done!
 
@@ -88,15 +110,17 @@ Unless screen sleep is prevented, the dashboard screen will go black after a few
 
 Add the following lines to the [SeatDefaults] section:
 
-```bash
-xserver-command=X -s 0 dpms
-```
+  ```
+  xserver-command=X -s 0 dpms
+  ```
 
 #### <a name="hideCursor"></a>Installing Unclutter
 
 Unclutter causes the mouse cursor to disappear when the mouse isn't being moved. This prevents the dash from having a cursor over the middle unless you plug in a mouse and move it elsewhere.
 
-`sudo apt-get install unclutter`
+  ```
+  sudo apt-get install unclutter
+  ```
 
 #### <a name="installingMidori"></a>Installing Midori
 
@@ -121,7 +145,7 @@ Midori is used for its compatibility with multiple RPi generations and reasonabl
 	```
 	[Desktop Entry]
 	Type=Application
-	Exec=midori -e Fullscreen -a file:///home/pi/Pi-Kitchen-Dashboard/index.html
+	Exec=midori -e Fullscreen -a file:///home/pi/Dashboard/index.html
 	```
 
 Your Pi should now atomatically start kiosk mode and show the dashboard full screen once your desktop loads.
@@ -132,7 +156,7 @@ If your time or date are incorrect, use `sudo raspi-config` to set your locale a
 
 If you don't want your display to run 24/7, you can use cron jobs to fire a pair of included bash scripts: screenOff.sh and screenOn.sh. Please ensure you've completed the [Disallowing screen sleep](#disallowingScreenSleep) step above in order to keep the display always on during the times it's scheduled to be on.
 
-1. `cd` into your Pi-Kitchen-Dashboard directory and set both scripts to executable
+1. `cd` into your Dashboard directory and set both scripts to executable
 	
 	```bash
 	chmod +x screenOff.sh
@@ -142,13 +166,13 @@ If you don't want your display to run 24/7, you can use cron jobs to fire a pair
 2. Run `crontab -e` and add cronjobs to the end using the provided scripts. If you're not comfortable writing cronjobs manually, you can use a <a href="http://cron.nmonitoring.com/cron-generator.html">crontab generator</a>. The following lines, for example, shut off the display at 11:00PM each night and turn it back on at 6:00AM. Be sure to edit the file paths if necessary.
 	
 	```
-	0 23 * * * /home/pi/Pi-Kitchen-Dashboard/screenOff.sh
-	0 6 * * * /home/pi/Pi-Kitchen-Dashboard/screenOn.sh
+	0 23 * * * /home/pi/Dashboard/screenOff.sh
+	0 6 * * * /home/pi/Dashboard/screenOn.sh
 	```
 
 ## <a name="changingTheSkin"></a>Changing the skin
 
-Skins are kept, conveniently, in the skins folder. To switch skins, edit `Pi-Kitchen-Dashboard/index.html` and insert the folder name of the skin you wish to use where the comments direct.
+Skins are kept, conveniently, in the skins folder. To switch skins, edit `Dashboard/index.html` and insert the folder name of the skin you wish to use where the comments direct.
 
 ## <a name="creatingSkins"></a>Creating skins
 
