@@ -40,13 +40,13 @@ Clone this repository with:
   ```
   git clone https://github.com/pelicanmedia/Dashboard.git
   ```
-
+  
 If your Pi does not currently have git, you will need to install it first with: 
   
   ```
   sudo apt-get install git
   ```  
-
+  
 ### <a name="fulfillingRequirements"></a>Fulfilling requirements
 
 This project is not distributed with its dependencies; however, [Bower](http://bower.io/) will automatically pull them in.
@@ -108,25 +108,26 @@ Unless screen sleep is prevented, the dashboard screen will go black after a few
   ```
   sudo nano /etc/lightdm/lightdm.conf
   ```
-
+  
 Add the following lines to the [SeatDefaults] section:
   ```
   xserver-command=X -s 0 dpms
   ```
-
+  
 #### <a name="hideCursor"></a>Installing Unclutter
 
 Unclutter causes the mouse cursor to disappear when the mouse isn't being moved. This prevents the dash from having a cursor over the middle unless you plug in a mouse and move it elsewhere.
   ```
   sudo apt-get install unclutter
   ```
-
+  
 #### <a name="installingMidori"></a>Installing Midori
 
 Midori is used for its compatibility with multiple RPi generations and reasonably solid rendering. Other browsers may be used if preferred using much the same strategy.
-
-`sudo apt-get install midori`
-
+  ```
+  sudo apt-get install midori
+  ```
+  
 #### <a name="autoStartingMidori"></a>Auto-starting Unclutter and Midori
 
 1. Create a new directory at `~/.config/autostart` if it does not exist
@@ -155,18 +156,18 @@ If your time or date are incorrect, use `sudo raspi-config` to set your locale a
 
 If you don't want your display to run 24/7, you can use cron jobs to fire a pair of included bash scripts: screenOff.sh and screenOn.sh. Please ensure you've completed the [Disallowing screen sleep](#disallowingScreenSleep) step above in order to keep the display always on during the times it's scheduled to be on.
 
-1. `cd` into your Dashboard directory and set both scripts to executable
+1. cd into your Dashboard directory and set both scripts to executable
   ```
   chmod +x screenOff.sh
   chmod +x screenOn.sh
   ```
-
+  
 2. Run `crontab -e` and add cronjobs to the end using the provided scripts. If you're not comfortable writing cronjobs manually, you can use a <a href="http://cron.nmonitoring.com/cron-generator.html">crontab generator</a>. The following lines, for example, shut off the display at 11:00PM each night and turn it back on at 6:00AM. Be sure to edit the file paths if necessary.
   ```
   0 23 * * * /home/pi/Dashboard/screenOff.sh
   0 6 * * * /home/pi/Dashboard/screenOn.sh
   ```
-
+  
 ## <a name="changingTheSkin"></a>Changing the skin
 
 Skins are kept, conveniently, in the skins folder. To switch skins, edit `Dashboard/index.html` and insert the folder name of the skin you wish to use where the comments direct.
