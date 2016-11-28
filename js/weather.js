@@ -176,22 +176,33 @@
 		}, waitBetweenWeatherQueriesMS);
 
 		// Set the current time and date on the clock
-		if ($('#time').length) {
-			$('#time').html(moment().format('h:mm:ss a'));
-		}
-		if ($('#date').length) {
-			$('#date').html(moment().format('dddd, MMMM Do'));
-		}
-
-		// Refresh the time and date every second
-		setInterval(function(){
-			if ($('#time').length) {
-				$('#time').html(moment().format('h:mm:ss a'));
-			}
-			if ($('#date').length) {
-				$('#date').html(moment().format('dddd, MMMM Do'));
-			}
-		}, 1000);
+                if ($('#time').length) {
+                        $('#time').html(moment().format('HH:mm'));
+                }
+                if ($('#timeS').length) {
+                        $('#timeS').html(moment().format('ss'));
+                }
+                if ($('#date').length) {
+                        $('#date').html(moment().format('dddd, Do MMMM YYYY'));
+                }
+                if ($('#time2').length) {
+                        $('#time2').html(moment().tz("America/Atikokan").format('HH:mm'));
+                        }
+                // Refresh the time and date every second
+                setInterval(function(){
+                        if ($('#time').length) {
+                                $('#time').html(moment().format('HH:mm'));
+                        }
+                        if ($('#timeS').length) {
+                                $('#timeS').html(moment().format('ss'));
+                        }
+                        if ($('#date').length) {
+                                $('#date').html(moment().format('dddd, Do MMMM YYYY'));
+                        }
+                        if ($('#time2').length) {
+                                $('#time2').html(moment().tz("America/Atikokan").format('HH:mm'));
+                        }
+                }, 1000);
 	});
 }());
 
