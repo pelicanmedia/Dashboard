@@ -5,9 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta name="application-name" content="Pi Kitchen Dashboard"/>
 
-		<title>Pi Kitchen Dashboard Default</title>
+		<title>Dashboard</title>
 
-		<meta name="description" content="Pi Kitchen Dashboard default template"/>
+		<meta name="description" content="Dashboard default template"/>
 		<meta name="author" content="Joshua Woehlke"/>
 		<meta name="designer" content="Joshua Woehlke, Ryan Smith"/>
 
@@ -93,8 +93,10 @@
 						</td>
 						<td colspan="3">
 							<!-- Current date and time information -->
-							<div id="time"></div>
 							<div id="date"></div>
+							<div id="time"></div>
+							<div id="time2"></div>
+							<div id="timeS"></div>
 						</td>
 					</tr>
 					<tr>
@@ -157,6 +159,8 @@
 		<!-- -->	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 		<!-- -->	<script src="../../bower_components/moment/min/moment.min.js"></script>
 		<!-- -->	<script src="../../js/weather.js"></script>
+		<!-- -->        <script src="../../js/moment-timezone.min.js"></script>
+		<!-- -->        <script>moment.tz.add('America/Atikokan|EST|50|0|');</script>
 		<!-- REQUIRED template files -->
 	</body>
 </html>
