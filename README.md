@@ -141,7 +141,7 @@ Midori is used for its compatibility with multiple RPi generations and reasonabl
   ```
   
 5. `nano midoriAuto.desktop` - Create a new .desktop file
-6. Add the following lines, edit the file path to where this project's index.html lives on your Pi and save. 
+6. Add the following lines, edit the file path to where this project's index.html lives on your Pi and save.
   ```
   [Desktop Entry]
   Type=Application
