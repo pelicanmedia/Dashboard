@@ -38,13 +38,13 @@ This project turns your monitor and Raspberry Pi into a simple, skinnable time a
 Clone this repository with: 
 
   ```
-  git clone https://github.com/pelicanmedia/Dashboard.git`.
+  git clone https://github.com/pelicanmedia/Dashboard.git
   ```
 
 If your Pi does not currently have git, you will need to install it first with: 
   
   ```
-  sudo apt-get install git`.
+  sudo apt-get install git
   ```  
 
 ### <a name="fulfillingRequirements"></a>Fulfilling requirements
