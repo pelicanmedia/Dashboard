@@ -132,7 +132,7 @@ Midori is used for its compatibility with multiple RPi generations and reasonabl
 1. Create a new directory at `~/.config/autostart` if it does not exist
 2. `cd ~/.config/autostart` - cd into this directory
 3. `nano unclutterAuto.desktop` - Create a new .desktop file
-4. Add the following lines and save. Customize the file path to where this project's index.html lives on your Pi.
+4. Add the following lines and save.
   ```
   [Desktop Entry]
   Type=Application
@@ -140,13 +140,14 @@ Midori is used for its compatibility with multiple RPi generations and reasonabl
   ```
   
 5. `nano midoriAuto.desktop` - Create a new .desktop file
+6. Add the following lines, edit the file path to where this project's index.html lives on your Pi and save. 
   ```
   [Desktop Entry]
   Type=Application
   Exec=midori -e Fullscreen -a file:///home/pi/Dashboard/index.html
   ```
   
-Your Pi should now atomatically start kiosk mode and show the dashboard full screen once your desktop loads.
+Your Pi should now atomatically start kiosk mode and show the dashboard, full screen, once your desktop loads.
 
 If your time or date are incorrect, use `sudo raspi-config` to set your locale and timezone.
 
@@ -155,18 +156,16 @@ If your time or date are incorrect, use `sudo raspi-config` to set your locale a
 If you don't want your display to run 24/7, you can use cron jobs to fire a pair of included bash scripts: screenOff.sh and screenOn.sh. Please ensure you've completed the [Disallowing screen sleep](#disallowingScreenSleep) step above in order to keep the display always on during the times it's scheduled to be on.
 
 1. `cd` into your Dashboard directory and set both scripts to executable
-	
-	```bash
-	chmod +x screenOff.sh
-	chmod +x screenOn.sh
-	```
+  ```
+  chmod +x screenOff.sh
+  chmod +x screenOn.sh
+  ```
 
 2. Run `crontab -e` and add cronjobs to the end using the provided scripts. If you're not comfortable writing cronjobs manually, you can use a <a href="http://cron.nmonitoring.com/cron-generator.html">crontab generator</a>. The following lines, for example, shut off the display at 11:00PM each night and turn it back on at 6:00AM. Be sure to edit the file paths if necessary.
-	
-	```
-	0 23 * * * /home/pi/Dashboard/screenOff.sh
-	0 6 * * * /home/pi/Dashboard/screenOn.sh
-	```
+  ```
+  0 23 * * * /home/pi/Dashboard/screenOff.sh
+  0 6 * * * /home/pi/Dashboard/screenOn.sh
+  ```
 
 ## <a name="changingTheSkin"></a>Changing the skin
 
