@@ -55,8 +55,8 @@ This project is not distributed with its dependencies; however, [Bower](http://b
   ```
   sudo apt-get update && sudo apt-get upgrade -y
   ```
+  
 2. Install Node Package Manager (required for Bower):
-
   ```
   curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
   sudo apt-get install -y nodejs build-essential
@@ -77,7 +77,7 @@ This project is not distributed with its dependencies; however, [Bower](http://b
   ```
   bower install
   ```
-
+  
 ### <a name="settingYourLocation"></a>Setting your location
 
 Open `js/weather.js` and find the following section at the top:
@@ -95,7 +95,7 @@ Open `js/weather.js` and find the following section at the top:
   // Default is every 15 minutes. Be reasonable. Don't query Yahoo every 500ms.
   var waitBetweenWeatherQueriesMS = 900000;
   ```
-
+  
 Change these variables to match your location, unit measurement, and desired update interval, and your part of the coding is done!
 
 ### <a name="configuringYourPi"></a>Configuring your Pi
@@ -105,11 +105,11 @@ You will need a Raspberry Pi (although you could use anything else) with Raspbia
 #### <a name="disallowingScreenSleep"></a>Disallowing screen sleep
 
 Unless screen sleep is prevented, the dashboard screen will go black after a few minutes and require a mouse movement or keypress to wake up. Scheduled times for the display to turn off are covered in a [later section](#scheduling).
-
-`sudo nano /etc/lightdm/lightdm.conf`
+  ```
+  sudo nano /etc/lightdm/lightdm.conf
+  ```
 
 Add the following lines to the [SeatDefaults] section:
-
   ```
   xserver-command=X -s 0 dpms
   ```
@@ -117,7 +117,6 @@ Add the following lines to the [SeatDefaults] section:
 #### <a name="hideCursor"></a>Installing Unclutter
 
 Unclutter causes the mouse cursor to disappear when the mouse isn't being moved. This prevents the dash from having a cursor over the middle unless you plug in a mouse and move it elsewhere.
-
   ```
   sudo apt-get install unclutter
   ```
@@ -134,20 +133,19 @@ Midori is used for its compatibility with multiple RPi generations and reasonabl
 2. `cd ~/.config/autostart` - cd into this directory
 3. `nano unclutterAuto.desktop` - Create a new .desktop file
 4. Add the following lines and save. Customize the file path to where this project's index.html lives on your Pi.
-
-	```
-	[Desktop Entry]
-	Type=Application
-	Exec=unclutter -idle 0.1
-	```
+  ```
+  [Desktop Entry]
+  Type=Application
+  Exec=unclutter -idle 0.1
+  ```
+  
 5. `nano midoriAuto.desktop` - Create a new .desktop file
-
-	```
-	[Desktop Entry]
-	Type=Application
-	Exec=midori -e Fullscreen -a file:///home/pi/Dashboard/index.html
-	```
-
+  ```
+  [Desktop Entry]
+  Type=Application
+  Exec=midori -e Fullscreen -a file:///home/pi/Dashboard/index.html
+  ```
+  
 Your Pi should now atomatically start kiosk mode and show the dashboard full screen once your desktop loads.
 
 If your time or date are incorrect, use `sudo raspi-config` to set your locale and timezone.
