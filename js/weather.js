@@ -9,7 +9,7 @@
 
 	// Your Yahoo WOEID code
 	// Find your WOEID code at http://woeid.rosselliot.co.nz/
-	var woeid = 23416998;
+	var woeid = 16545; 
 	
 	// Your temperature unit measurement
 	// This bit is simple, 'c' for Celcius, and 'f' for Fahrenheit
