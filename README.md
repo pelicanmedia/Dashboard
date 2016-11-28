@@ -169,6 +169,8 @@ Creating your own skin or a new skin for distribution is easy and only requires 
 
 ## <a name="credit"></a>Credit
 
+Original [Pi Kitchen Desktop](https://github.com/userexec/Pi-Kitchen-Dashboard) by [userexec](https://github.com/userexec)
+
 Weather icons by Lukas Bischoff and Erik Flowers https://github.com/erikflowers/weather-icons. Icons licensed under [SIL OFL 1.1](http://scripts.sil.org/OFL).  
 
 Time formatting by [Moment.js](http://momentjs.com/)  
