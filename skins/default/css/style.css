@@ -110,10 +110,10 @@ font-size: 2.5vmin;
 font-size: 15vmin;
 }
 #time2 {
-font-size: 12vmin;
+font-size: 10vmin;
 }
 #date {
-font-size: 5vmin;
+font-size: 8vmin;
 }
 #timeS {
 font-size: 10vmin;
@@ -123,6 +123,6 @@ font-size: 10vmin;
 display: inline-block;
 height: 100%;
 width: 100%;
-background: rgba(255,255,255,0.2);
+background: black;
 padding-top: 4vh;
 }
