@@ -134,6 +134,7 @@ Midori is used for its compatibility with multiple RPi generations and reasonabl
 2. cd into this directory - `cd ~/.config/autostart`
 3. Create a new .desktop file - `nano unclutterAuto.desktop`
 4. Add the following lines and save.
+  
   ```
   [Desktop Entry]
   Type=Application
@@ -142,6 +143,7 @@ Midori is used for its compatibility with multiple RPi generations and reasonabl
   
 5. Create a new .desktop file - `nano midoriAuto.desktop`
 6. Add the following lines, edit the file path to where this project's index.html lives on your Pi and save.
+  
   ```
   [Desktop Entry]
   Type=Application
