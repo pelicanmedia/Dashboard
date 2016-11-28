@@ -110,14 +110,14 @@ Add the following lines to the [SeatDefaults] section:
   xserver-command=X -s 0 dpms
   ```
   
-#### <a name="hideCursor"></a>Installing Unclutter
+#### <a name="hidingCursor"></a>Installing Unclutter
 
 Unclutter causes the mouse cursor to disappear when the mouse isn't being moved. This prevents the dash from having a cursor over the middle unless you plug in a mouse and move it elsewhere.
   ```
   sudo apt-get install unclutter
   ```
   
-#### <a name="autoStartingMidori"></a>Auto-starting Unclutter and Chromium
+#### <a name="autoStartingChrome"></a>Auto-starting Unclutter and Chromium
 
 1. Create a new directory at `~/.config/autostart` if it does not exist
 2. cd into this directory - `cd ~/.config/autostart`
