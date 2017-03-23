@@ -14,6 +14,10 @@
 	// Your temperature unit measurement
 	// This bit is simple, 'c' for Celcius, and 'f' for Fahrenheit
 	var unit = 'c';
+	
+	// Format for date and time
+	var formatTime = 'h:mm:ss a'
+	var formatDate = 'dddd, MMMM Do'
 
 	// Yahoo! query interval (milliseconds)
 	// Default is every 15 minutes. Be reasonable. Don't query Yahoo every 500ms.
@@ -176,6 +180,7 @@
 		}, waitBetweenWeatherQueriesMS);
 
 		// Set the current time and date on the clock
+<<<<<<< HEAD
                 if ($('#time').length) {
                         $('#time').html(moment().format('HH:mm'));
                 }
@@ -203,6 +208,24 @@
                                 $('#time2').html(moment().tz("America/Atikokan").format('HH:mm'));
                         }
                 }, 1000);
+=======
+		if ($('#time').length) {
+			$('#time').html(moment().format(formatTime));
+		}
+		if ($('#date').length) {
+			$('#date').html(moment().format(formatDate));
+		}
+
+		// Refresh the time and date every second
+		setInterval(function(){
+			if ($('#time').length) {
+				$('#time').html(moment().format(formatTime));
+			}
+			if ($('#date').length) {
+				$('#date').html(moment().format(formatDate));
+			}
+		}, 1000);
+>>>>>>> userexec/master
 	});
 }());
 
